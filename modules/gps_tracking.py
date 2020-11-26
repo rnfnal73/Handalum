@@ -6,7 +6,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.properties import BooleanProperty,NumericProperty
-from kivy.graphics import Line
+from kivy.core.window import WindowBase
 import threading
 import time
 import pickle
@@ -17,6 +17,7 @@ class GpsTrackingWidget(Widget):
     is_screen = BooleanProperty(True)
     
     def __init__(self):
+        super().__init__()
         self.widget_layout = FloatLayout()
         self.origin_size = (1,1)
         self.map_view = MapView(zoom=12, lat=37.5606, lon=126.9790) # gps에서 현재위치 받아서 띄우기
@@ -41,23 +42,28 @@ class GpsTrackingWidget(Widget):
         self.marker_layer.unload()
         
     def save_button_release(self,btn):
-        t = threading.Thread(target=self.save_data,args=[self.positions])
+        cur_time = datetime.datetime.now()
+        self.map_view.export_to_png(filename='Records/'+str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
+            cur_time.minute) + str(cur_time.second)+'.png')
+        t = threading.Thread(target=self.save_data,args=[self.positions,cur_time])
         t.start()
         t.join()
 
-
-    def save_data(self,_list):
+    def save_data(self,*args):
+        _list, cur_time = args
         sql_connection = sqlite3.connect('Records/records.db')
-        cur_time = datetime.datetime.now()
         cur = str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
             cur_time.minute) + str(cur_time.second)
         cursor = sql_connection.cursor()
         #print("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec) values ("+f"{cur},{_list[0]},{_list[1]},{cur_time.year},{cur_time.month},{cur_time.day},{cur_time.hour},{cur_time.minute},{cur_time.second}"+")")
-        cursor.execute("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec,markers) values (?,?,?,?,?,?,?,?,?,?)",[cur,_list[0][0],_list[0][1],cur_time.year,cur_time.month,cur_time.day,cur_time.hour,cur_time.minute,cur_time.second,pickle.dumps(_list)])
+        cursor.execute("insert into my_records (datetime,lat,lon,markers) values (?,?,?,?)",[cur,_list[0][0],_list[0][1],pickle.dumps(_list)])
         #with open('Records/'+ cur, 'wb') as fd:
         #    pickle.dump(_list, fd)
         sql_connection.commit()
         sql_connection.close()
+        #WindowBase.screenshot(WindowBase,name='img.png')
+        #self.screenshot(name='Records/img.png')
+
 
     def items_bind(self):
         self.map_view.bind(on_map_relocated=self.pos_changed)
