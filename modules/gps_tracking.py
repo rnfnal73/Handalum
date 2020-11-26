@@ -11,6 +11,7 @@ import threading
 import time
 import pickle
 import datetime
+import sqlite3
 
 class GpsTrackingWidget(Widget):
     is_screen = BooleanProperty(True)
@@ -46,11 +47,17 @@ class GpsTrackingWidget(Widget):
 
 
     def save_data(self,_list):
+        sql_connection = sqlite3.connect('Records/records.db')
         cur_time = datetime.datetime.now()
         cur = str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
             cur_time.minute) + str(cur_time.second)
-        with open('Records/'+ cur, 'wb') as fd:
-            pickle.dump(_list, fd)
+        cursor = sql_connection.cursor()
+        #print("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec) values ("+f"{cur},{_list[0]},{_list[1]},{cur_time.year},{cur_time.month},{cur_time.day},{cur_time.hour},{cur_time.minute},{cur_time.second}"+")")
+        cursor.execute("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec,markers) values (?,?,?,?,?,?,?,?,?,?)",[cur,_list[0][0],_list[0][1],cur_time.year,cur_time.month,cur_time.day,cur_time.hour,cur_time.minute,cur_time.second,pickle.dumps(_list)])
+        #with open('Records/'+ cur, 'wb') as fd:
+        #    pickle.dump(_list, fd)
+        sql_connection.commit()
+        sql_connection.close()
 
     def items_bind(self):
         self.map_view.bind(on_map_relocated=self.pos_changed)
