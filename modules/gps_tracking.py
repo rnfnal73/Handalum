@@ -9,6 +9,8 @@ from kivy.properties import BooleanProperty,NumericProperty
 from kivy.graphics import Line
 import threading
 import time
+import pickle
+import datetime
 
 class GpsTrackingWidget(Widget):
     is_screen = BooleanProperty(True)
@@ -23,7 +25,6 @@ class GpsTrackingWidget(Widget):
         self.map_view.add_marker(MapMarker(lat=self.cur_lat,lon=self.cur_lon,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)
         self.positions = [(self.cur_lat,self.cur_lon)]
-        
         self.save_button = Button(text='save',pos_hint={'x':0.0,'y':0.0},size_hint=(.1,.1))
         self.clear_button = Button(text='clear',pos_hint={'x':0.1,'y':0.0},size_hint=(.1,.1))
         
@@ -34,21 +35,31 @@ class GpsTrackingWidget(Widget):
         self.positions.append((gps.lon,gps.lat))
         self.map_view.add_marker(MapMarker(lat=gps.lon,lon=gps.lat,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음
-        
+
     def clear_button_release(self,btn):
         self.marker_layer.unload()
         
     def save_button_release(self,btn):
-        pass
-    
+        t = threading.Thread(target=self.save_data,args=[self.positions])
+        t.start()
+        t.join()
+
+
+    def save_data(self,_list):
+        cur_time = datetime.datetime.now()
+        cur = str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
+            cur_time.minute) + str(cur_time.second)
+        with open('Records/'+ cur, 'wb') as fd:
+            pickle.dump(_list, fd)
+
     def items_bind(self):
+        self.map_view.bind(on_map_relocated=self.pos_changed)
+        self.save_button.bind(on_release=self.save_button_release)
+        self.clear_button.bind(on_release=self.clear_button_release)
         self.widget_layout.add_widget(self.map_view)
         self.widget_layout.add_widget(self.save_button)
         self.widget_layout.add_widget(self.clear_button)                             
         self.bind(is_screen=self.on_is_screen)
-        self.map_view.bind(on_map_relocated = self.pos_changed)
-        self.save_button.bind(on_release=self.save_button_release)
-        self.clear_button.bind(on_release=self.clear_button_release)
         
     def on_is_screen(self,instance,value):
         if value:

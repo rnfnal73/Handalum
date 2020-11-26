@@ -103,7 +103,10 @@ class MyApplicationApp(MDApp):
         parent.add_widget(self.share_course_widget.widget_layout)
         parent.add_widget(self.hot_place_widget.widget_layout)
         parent.add_widget(self.gps_records_widget.widget_layout)
-        
+
+
+        self.clear_screen('walking')
+
         parent.add_widget(self.background_widget)
         parent.add_widget(self.dropdown_widget.mainbutton)
         

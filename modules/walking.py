@@ -25,7 +25,7 @@ class WalkingWidget(Widget):
         self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'y':0.05})
         self.background_widget = Image(source='images/background2.png',size = Window.size,allow_stretch=True, keep_ratio=False)
         self.data_tables = MDDataTable(
-            size_hint=(0.7, 0.9),
+            size_hint=(0.5, 0.8),
             column_data=[
                 ("", dp(40)),
                 ("", dp(70)),
@@ -57,18 +57,21 @@ class WalkingWidget(Widget):
         self.items_bind()
         
     def items_bind(self):
-        for _label in self.labels:
-            self.widget_layout.add_widget(_label)
+        #for _label in self.labels:
+        #    self.widget_layout.add_widget(_label)
+
         self.widget_layout_main.add_widget(self.background_widget)
+        self.widget_layout.add_widget(self.data_tables)
         self.widget_layout_main.add_widget(self.widget_layout)
         self.bind(is_screen=self.on_is_screen)
         self.bind(steps_value=self.steps_value_changed)
         
     def steps_value_changed(self,instance,value):
-        for label in [self.steps_value_label,self.distance_value_label,self.kcal_value_label,
-                      self.a_value_label,self.b_value_label,self.c_value_label]:
-            label.text = str(time.time())
-        
+        #for label in [self.steps_value_label,self.distance_value_label,self.kcal_value_label,
+        #              self.a_value_label,self.b_value_label,self.c_value_label]:
+        #    label.text = str(time.time())
+        pass
+
     def on_is_screen(self,instance,value):
         if value:
             self.items_bind()

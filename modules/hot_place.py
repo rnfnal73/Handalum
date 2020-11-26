@@ -23,8 +23,8 @@ class HotPlaceWidget(Widget):
         self.items_bind()
         
     def items_bind(self):
-        self.widget_layout.add_widget(self.data_tables)
-        #self.widget_layout.add_widget(self.img)
+        #self.widget_layout.add_widget(self.data_tables)
+        self.widget_layout.add_widget(self.img)
         self.bind(is_screen=self.on_is_screen)
         
     def on_is_screen(self,instance,value):
