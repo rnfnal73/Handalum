@@ -103,7 +103,6 @@ class ImageButton(ButtonBehavior, AsyncImage):
         popup = Popup(title='retitle',content=box)
         popup.open()
 
-
     def delete_pressed(self, btn):
         filename = self.filename
         obj = self.obj
@@ -160,15 +159,15 @@ class ImageButton(ButtonBehavior, AsyncImage):
             try:
                 sql_connection = sqlite3.connect('Records/records.db')
                 cursor = sql_connection.cursor()
-                cursor.execute('insert into shared_records (datetime,lat,lon,markers,recommend) values (?,?,?,?,?)',
-                               [filename, lat, lon, markers, 0])
+                cursor.execute('insert into shared_records (datetime,lat,lon,title,markers,recommend) values (?,?,?,?,?,?)',
+                               [filename, lat, lon, title,markers, 0])
                 sql_connection.commit()
                 sql_connection.close()
                 popuppp.open()
             except:
                 popupp.open()
 
-        filename, lat, lon, markers = self.filename, self.lat, self.lon, self.markers
+        filename, lat, lon, title,markers = self.filename, self.lat, self.lon, self.title,self.markers
         box = BoxLayout(orientation='vertical')
         yes_button, no_button = Button(text='yes', on_release=yes_pressed), Button(text='no', on_release=no_pressed)
         box.add_widget(yes_button)
