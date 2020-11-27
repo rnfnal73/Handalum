@@ -5,7 +5,10 @@ from kivy.uix.popup import Popup
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import BooleanProperty,NumericProperty
+from kivy.uix.textinput import TextInput
+from kivy.uix.label import Label
 from kivy.core.window import WindowBase
 import threading
 import time
@@ -43,24 +46,66 @@ class GpsTrackingWidget(Widget):
         
     def save_button_release(self,btn):
         cur_time = datetime.datetime.now()
-        self.map_view.export_to_png(filename='Records/'+str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
-            cur_time.minute) + str(cur_time.second)+'.png')
         t = threading.Thread(target=self.save_data,args=[self.positions,cur_time])
         t.start()
         t.join()
 
     def save_data(self,*args):
-        _list, cur_time = args
-        sql_connection = sqlite3.connect('Records/records.db')
-        cur = str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
-            cur_time.minute) + str(cur_time.second)
-        cursor = sql_connection.cursor()
+        obj = self.map_view
+        def insert_pressed(btn):
+            def wrong_back_pressed(_btn):
+                popupp.dismiss()
+            def good_back_pressed(_btn):
+                popuppp.dismiss()
+            box3 = BoxLayout(orientation='vertical')
+            box3.add_widget(Label(text='wrong'))
+            box3.add_widget(Button(text='back',on_release=wrong_back_pressed))
+            popupp = Popup(title='wrong',content=box3)
+
+            box4 = BoxLayout(orientation='vertical')
+            box4.add_widget(Label(text='good'))
+            box4.add_widget(Button(text='back', on_release=good_back_pressed))
+            popuppp = Popup(title='good', content=box4)
+
+            if not text_input.text:
+                popupp.open()
+            else:
+                _list, cur_time = args
+                sql_connection = sqlite3.connect('Records/records.db')
+                cur = str(cur_time.year) + str(cur_time.month) + str(cur_time.day) + str(cur_time.hour) + str(
+                    cur_time.minute) + str(cur_time.second)
+                cursor = sql_connection.cursor()
+                cursor.execute("insert into my_records (datetime,lat,lon,title,markers) values (?,?,?,?,?)",
+                               [cur, _list[0][0], _list[0][1],text_input.text, pickle.dumps(_list)])
+
+                sql_connection.commit()
+                sql_connection.close()
+                obj.export_to_png(filename='Records/' + str(cur_time.year) + str(cur_time.month) + str(cur_time.day) +
+                                            str(cur_time.hour) + str(cur_time.minute) + str(cur_time.second) + '.png')
+                text_input.text=''
+                popuppp.open()
+        def back_pressed(btn):
+            popup.dismiss()
+        box = BoxLayout(orientation='vertical')
+        box2 = BoxLayout(orientation='horizontal')
+
+        insert_button = Button(text='insert',on_release=insert_pressed)
+        back_button = Button(text='back',on_release=back_pressed)
+        box2.add_widget(insert_button)
+        box2.add_widget(back_button)
+
+        text_input = TextInput(text='insert title for map')
+
+        box.add_widget(text_input)
+        box.add_widget(box2)
+        popup = Popup(title='title the map',content=box)
+        popup.open()
+
+
         #print("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec) values ("+f"{cur},{_list[0]},{_list[1]},{cur_time.year},{cur_time.month},{cur_time.day},{cur_time.hour},{cur_time.minute},{cur_time.second}"+")")
-        cursor.execute("insert into my_records (datetime,lat,lon,markers) values (?,?,?,?)",[cur,_list[0][0],_list[0][1],pickle.dumps(_list)])
-        #with open('Records/'+ cur, 'wb') as fd:
+
+        # with open('Records/'+ cur, 'wb') as fd:
         #    pickle.dump(_list, fd)
-        sql_connection.commit()
-        sql_connection.close()
         #WindowBase.screenshot(WindowBase,name='img.png')
         #self.screenshot(name='Records/img.png')
 
