@@ -15,13 +15,9 @@ from modules.share_course import ShareCourseWidget
 from modules.hot_place import HotPlaceWidget
 from modules.gps_records import GpsRecordsWidget
 
-from os.path import join,dirname
 import threading
 import sqlite3
 
-import kivy.garden
-
-kivy.garden.garden_app_dir = join(dirname(__file__),"libs","garden")
 
 class MyApplicationApp(MDApp):
     def __init__(self):
