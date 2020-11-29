@@ -13,6 +13,7 @@ from kivy.core.window import Window
 from kivy.uix.textinput import TextInput
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.garden.mapview import MapView, MapMarker, MarkerMapLayer
+from kivy.uix.scrollview import ScrollView
 from kivy.uix.popup import Popup
 from kivy.metrics import dp
 
@@ -156,17 +157,28 @@ class ImageButton(ButtonBehavior, AsyncImage):
             box.add_widget(Button(size_hint=(1, .2), text='back', on_release=back_pressed2))
             popuppp = Popup(size_hint=(.3, .3), title='good', content=box)
 
+            sql_connection = sqlite3.connect('Records/records.db')
+            cursor = sql_connection.cursor()
             try:
-                sql_connection = sqlite3.connect('Records/records.db')
-                cursor = sql_connection.cursor()
                 cursor.execute('insert into shared_records (datetime,lat,lon,title,markers,recommend) values (?,?,?,?,?,?)',
                                [filename, lat, lon, title,markers, 0])
-                sql_connection.commit()
-                sql_connection.close()
                 popuppp.open()
-            except:
+            except sqlite3.IntegrityError as err:
                 popupp.open()
 
+            for (latitude, longitude) in pickle.loads(markers):
+                try:
+                    cursor.execute('insert into popularity (location,lat,lon,count) values (?,?,?,?)',
+                                   [str(latitude) + str(longitude), latitude, longitude, 1])
+                except sqlite3.IntegrityError as err:
+                    cursor.execute('select count from popularity')
+                    cnt = cursor.fetchone()[0]
+                    cursor.execute('update popularity set count = ? where location = ?',[cnt+1,str(latitude)+str(longitude)])
+                    continue
+
+
+            sql_connection.commit()
+            sql_connection.close()
         filename, lat, lon, title,markers = self.filename, self.lat, self.lon, self.title,self.markers
         box = BoxLayout(orientation='vertical')
         yes_button, no_button = Button(text='yes', on_release=yes_pressed), Button(text='no', on_release=no_pressed)
@@ -198,6 +210,8 @@ class GpsRecordsWidget(Widget):
         self.pages = []
         self.cur_page = 0
 
+        self.scrollview = ScrollView()
+
         self.items_bind()
 
     def create_img(self, *args):
@@ -222,6 +236,7 @@ class GpsRecordsWidget(Widget):
                 grid_layout.add_widget(self.create_img(fetched[count], count, self))
                 count += 1
             self.widget_layout.add_widget(grid_layout)
+
         grid_layout = GridLayout(cols=2)
         for _ in range(4):
             try:
@@ -229,7 +244,9 @@ class GpsRecordsWidget(Widget):
                 count += 1
             except:
                 grid_layout.add_widget(Widget())
+
         self.widget_layout.add_widget(grid_layout)
+
 
         # self.widget_layout.add_widget(self.img3)
         # self.widget_layout.add_widget(self.img2)
