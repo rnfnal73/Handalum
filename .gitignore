@@ -1,9 +1,5 @@
 .idea/
 __pycache__/
-images/
-KivyMD/
-libs/
-Records/
 test/
 cache/
 hi/
