@@ -14,12 +14,12 @@ build_time_vars = {'ABIFLAGS': '',
  'BINLIBDEST': '/usr/local/lib/python3.8',
  'BLDLIBRARY': '-L. -lpython3.8',
  'BLDSHARED': '/home/minu/.buildozer/android/platform/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang '
-              '-shared '
+              '-shared -L. -fuse-ld=lld '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
               '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-              '-march=armv7-a -Wl,--fix-cortex-a8  '
+              '-march=armv7-a  -L. -fuse-ld=lld '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
@@ -51,11 +51,12 @@ build_time_vars = {'ABIFLAGS': '',
                        '-I/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1/include/internal '
                        '-I/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1/include/openssl '
                        '-I/home/minu/.buildozer/android/platform/android-ndk-r19c/sysroot/usr/include',
- 'CONFIGURE_LDFLAGS': '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
+ 'CONFIGURE_LDFLAGS': '-L. -fuse-ld=lld '
+                      '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                       '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                       '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
                       '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-                      '-march=armv7-a -Wl,--fix-cortex-a8',
+                      '-march=armv7-a',
  'CONFIGURE_LDFLAGS_NODIST': '',
  'CONFIG_ARGS': "'--host=arm-linux-androideabi' '--build=x86_64-pc-linux-gnu' "
                 "'--enable-shared' '--enable-ipv6' 'ac_cv_file__dev_ptmx=yes' "
@@ -66,7 +67,8 @@ build_time_vars = {'ABIFLAGS': '',
                 "'build_alias=x86_64-pc-linux-gnu' "
                 "'host_alias=arm-linux-androideabi' "
                 "'CC=/home/minu/.buildozer/android/platform/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang' "
-                "'CFLAGS=-fPIC -DANDROID -D__ANDROID_API__=21' 'LDFLAGS= "
+                "'CFLAGS=-fPIC -DANDROID -D__ANDROID_API__=21' 'LDFLAGS= -L. "
+                '-fuse-ld=lld '
                 '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                 '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                 '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
@@ -575,11 +577,12 @@ build_time_vars = {'ABIFLAGS': '',
  'IO_H': 'Modules/_io/_iomodule.h',
  'IO_OBJS': '\\',
  'LDCXXSHARED': 'c++ -shared',
- 'LDFLAGS': '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
+ 'LDFLAGS': '-L. -fuse-ld=lld '
+            '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
             '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
             '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
             '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-            '-march=armv7-a -Wl,--fix-cortex-a8  '
+            '-march=armv7-a  -L. -fuse-ld=lld '
             '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
             '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
             '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
@@ -588,12 +591,12 @@ build_time_vars = {'ABIFLAGS': '',
  'LDLIBRARY': 'libpython3.8.so',
  'LDLIBRARYDIR': '',
  'LDSHARED': '/home/minu/.buildozer/android/platform/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang '
-             '-shared '
+             '-shared -L. -fuse-ld=lld '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
              '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-             '-march=armv7-a -Wl,--fix-cortex-a8  '
+             '-march=armv7-a  -L. -fuse-ld=lld '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
              '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
@@ -753,11 +756,12 @@ build_time_vars = {'ABIFLAGS': '',
                    '-I/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1/include/openssl '
                    '-I/home/minu/.buildozer/android/platform/android-ndk-r19c/sysroot/usr/include '
                    '-DPy_BUILD_CORE',
- 'PY_CORE_LDFLAGS': '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
+ 'PY_CORE_LDFLAGS': '-L. -fuse-ld=lld '
+                    '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                     '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                     '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
                     '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-                    '-march=armv7-a -Wl,--fix-cortex-a8  '
+                    '-march=armv7-a  -L. -fuse-ld=lld '
                     '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                     '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                     '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
@@ -777,11 +781,12 @@ build_time_vars = {'ABIFLAGS': '',
                 '-I/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1/include/openssl '
                 '-I/home/minu/.buildozer/android/platform/android-ndk-r19c/sysroot/usr/include',
  'PY_FORMAT_SIZE_T': '"z"',
- 'PY_LDFLAGS': '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
+ 'PY_LDFLAGS': '-L. -fuse-ld=lld '
+               '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
                '-L/home/minu/.buildozer/android/platform/android-ndk-r19c/platforms/android-21/arch-arm/usr/lib '
-               '-march=armv7-a -Wl,--fix-cortex-a8  '
+               '-march=armv7-a  -L. -fuse-ld=lld '
                '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3/obj/local/armeabi-v7a '
                '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi/.libs '
                '-L/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1 '
