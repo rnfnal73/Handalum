@@ -1,0 +1,203 @@
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/obj/local/armeabi-v7a/objs-debug/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfnt.o: \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfnt.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfntpic.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfntpic.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sferrors.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttload.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/tttags.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttload.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/tttypes.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/tttables.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmm.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/t1tables.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttmtx.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttmtx.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmap.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftvalid.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmap.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svttcmap.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmapc.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttkern.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttkern.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfobjs.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfobjs.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/sfnt.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ttnameid.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsnames.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttbdf.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftbdf.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfdriver.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfdriver.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttpost.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svbdf.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svgldict.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svsfnt.h \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit0.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttpost.c \
+  /home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttbdf.c
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/ft2build.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftheader.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/internal.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfntpic.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/freetype.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftconfig.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftoption.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/config/ftstdlib.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fttypes.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsystem.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftimage.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrors.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmoderr.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/fterrdef.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftobjs.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftrender.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmodapi.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftglyph.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsizes.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftlcdfil.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftmemory.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftgloadr.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdriver.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/autohint.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftserv.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftpic.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftincrem.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfntpic.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sferrors.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttload.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftdebug.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftstream.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/tttags.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttload.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/tttypes.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/tttables.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftmm.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/t1tables.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttmtx.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttmtx.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmap.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/ftvalid.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmap.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svttcmap.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttcmapc.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttkern.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttkern.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfobjs.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfobjs.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/sfnt.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ttnameid.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpscmap.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftsnames.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttbdf.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/ftbdf.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfdriver.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/sfdriver.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttpost.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svbdf.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svgldict.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svpostnm.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/include/freetype/internal/services/svsfnt.h:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttsbit0.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttpost.c:
+
+/home/minu/minu/Handalum/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_ttf/external/freetype-2.4.12/src/sfnt/ttbdf.c:
