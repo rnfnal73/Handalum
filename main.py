@@ -22,6 +22,7 @@ import sqlite3
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
+        self.parent = ""
         self.widget_list = dict()
         
     def btn_callback_bind(self):
@@ -67,7 +68,7 @@ class MyApplicationApp(MDApp):
         # 위젯들의 사이즈를 0으로 만들어 화면에서 사라지는 모습을 구현
     
     def build(self):
-        parent = FloatLayout()
+        self.parent = FloatLayout()
         self.background_widget = Widget()#color = (0.4,0.5,0.3))
         self.dropdown_widget = DropDownWidget()
         self.btn_callback_bind()
@@ -98,25 +99,24 @@ class MyApplicationApp(MDApp):
         
         #aimg = AsyncImage(source='http://mywebsite.com/logo.png')
         
-        parent.add_widget(self.walking_widget.widget_layout_main)
-        parent.add_widget(self.past_record_widget.widget_layout)
-        parent.add_widget(self.gps_tracking_widget.widget_layout)
-        parent.add_widget(self.share_course_widget.widget_layout)
-        parent.add_widget(self.hot_place_widget.widget_layout)
-        parent.add_widget(self.gps_records_widget.widget_layout)
+        #self.parent.add_widget(self.walking_widget.widget_layout_main)
+        #self.parent.add_widget(self.past_record_widget.widget_layout)
+        #self.parent.add_widget(self.gps_tracking_widget.widget_layout)
+        #self.parent.add_widget(self.share_course_widget.widget_layout)
+        #self.parent.add_widget(self.hot_place_widget.widget_layout)
+        #self.parent.add_widget(self.gps_records_widget.widget_layout)
 
 
         self.clear_screen('walking')
 
-        parent.add_widget(self.background_widget)
-        parent.add_widget(self.dropdown_widget.mainbutton)
+        self.parent.add_widget(self.background_widget)
+        self.parent.add_widget(self.dropdown_widget.mainbutton)
         
-        return parent
+        return self.parent
 
 if __name__ == '__main__':
     
-    x=MyApplicationApp()
-    x.run()
+    MyApplicationApp().run()
     
 '''
 import sqlite3
