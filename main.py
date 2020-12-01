@@ -96,18 +96,18 @@ class MyApplicationApp(MDApp):
         # 위젯들의 사이즈를 0으로 만들어 화면에서 사라지는 모습을 구현
     
     def build(self):
-        self.parent.add_widget(self.walking_widget.widget_layout_main)
-        self.parent.add_widget(self.past_record_widget.widget_layout)
-        self.parent.add_widget(self.gps_tracking_widget.widget_layout)
-        self.parent.add_widget(self.share_course_widget.widget_layout)
-        self.parent.add_widget(self.hot_place_widget.widget_layout)
-        self.parent.add_widget(self.gps_records_widget.widget_layout)
+        #self.parent.add_widget(self.walking_widget.widget_layout_main)
+        #self.parent.add_widget(self.past_record_widget.widget_layout)
+        #self.parent.add_widget(self.gps_tracking_widget.widget_layout)
+        ##self.parent.add_widget(self.share_course_widget.widget_layout)
+        #self.parent.add_widget(self.hot_place_widget.widget_layout)
+        #self.parent.add_widget(self.gps_records_widget.widget_layout)
 
 
-        self.clear_screen('walking')
+        #self.clear_screen('walking')
 
         self.parent.add_widget(self.background_widget)
-        self.parent.add_widget(self.dropdown_widget.mainbutton)
+        #self.parent.add_widget(self.dropdown_widget.mainbutton)
         
         return self.parent
 
