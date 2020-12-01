@@ -41,19 +41,6 @@ class WalkingWidget(Widget):
                 ('c',self.steps_value)
             ]
         )
-
-        '''
-        self.steps_label, self.steps_value_label = Label(text = 'steps',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.distance_label, self.distance_value_label = Label(text = 'dist',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.kcal_label, self.kcal_value_label = Label(text = 'kcal',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.a_label, self.a_value_label = Label(text = 'abcd',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.b_label, self.b_value_label = Label(text = 'asdas',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.c_label, self.c_value_label = Label(text = 'asd',color = self.color), Label(text = f'{self.steps_value}',color = self.color)
-        self.labels = [self.steps_label,self.steps_value_label,
-                       self.distance_label,self.distance_value_label,self.kcal_label,
-                       self.kcal_value_label,self.a_label,self.a_value_label,
-                       self.b_label,self.b_value_label,self.c_label,self.c_value_label]
-        '''
         self.items_bind()
         
     def items_bind(self):

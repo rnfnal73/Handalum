@@ -96,24 +96,12 @@ class MyApplicationApp(MDApp):
         # 위젯들의 사이즈를 0으로 만들어 화면에서 사라지는 모습을 구현
     
     def build(self):
-        
-        #aimg = AsyncImage(source='http://mywebsite.com/logo.png')
-        
-
         self.parent.add_widget(self.walking_widget.widget_layout_main)
         self.parent.add_widget(self.past_record_widget.widget_layout)
         self.parent.add_widget(self.gps_tracking_widget.widget_layout)
         self.parent.add_widget(self.share_course_widget.widget_layout)
         self.parent.add_widget(self.hot_place_widget.widget_layout)
         self.parent.add_widget(self.gps_records_widget.widget_layout)
-
-        #self.parent.add_widget(self.walking_widget.widget_layout_main)
-        #self.parent.add_widget(self.past_record_widget.widget_layout)
-        #self.parent.add_widget(self.gps_tracking_widget.widget_layout)
-        #self.parent.add_widget(self.share_course_widget.widget_layout)
-        #self.parent.add_widget(self.hot_place_widget.widget_layout)
-        #self.parent.add_widget(self.gps_records_widget.widget_layout)
-
 
 
         self.clear_screen('walking')
@@ -126,21 +114,3 @@ class MyApplicationApp(MDApp):
 if __name__ == '__main__':
     
     MyApplicationApp().run()
-    
-'''
-import sqlite3
- 
-# SQLite DB 연결
-conn = sqlite3.connect("test.db")
- 
-# Connection 으로부터 Cursor 생성
-cur = conn.cursor()
- 
-# SQL 쿼리 실행
-cur.execute("select * from customer")
- 
-# 데이타 Fetch
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-'''

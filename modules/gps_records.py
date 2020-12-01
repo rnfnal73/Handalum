@@ -25,6 +25,7 @@ class ImageButton(ButtonBehavior, AsyncImage):
     def __init__(self, *args, **kwargs):
         super(ImageButton, self).__init__(**kwargs)
         self.filename, self.lat, self.lon, self.title, self.markers, self.count, self.obj = args
+        self.popup = ""
 
     def on_press(self):  # title수정/삭제/뒤로가기/공유하기 버튼 만들기 => db에 공유 여부를 체크해야 하지만.. 일단 넘어가는 걸로 하자
         master_obj = self.obj
