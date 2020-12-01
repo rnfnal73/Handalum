@@ -22,6 +22,7 @@ import sqlite3
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
+        self.parent = ""
         self.widget_list = dict()
         
     def btn_callback_bind(self):
@@ -98,6 +99,7 @@ class MyApplicationApp(MDApp):
         
         #aimg = AsyncImage(source='http://mywebsite.com/logo.png')
         
+
         self.parent.add_widget(self.walking_widget.widget_layout_main)
         self.parent.add_widget(self.past_record_widget.widget_layout)
         self.parent.add_widget(self.gps_tracking_widget.widget_layout)
@@ -105,18 +107,25 @@ class MyApplicationApp(MDApp):
         self.parent.add_widget(self.hot_place_widget.widget_layout)
         self.parent.add_widget(self.gps_records_widget.widget_layout)
 
+        #self.parent.add_widget(self.walking_widget.widget_layout_main)
+        #self.parent.add_widget(self.past_record_widget.widget_layout)
+        #self.parent.add_widget(self.gps_tracking_widget.widget_layout)
+        #self.parent.add_widget(self.share_course_widget.widget_layout)
+        #self.parent.add_widget(self.hot_place_widget.widget_layout)
+        #self.parent.add_widget(self.gps_records_widget.widget_layout)
+
+
 
         self.clear_screen('walking')
 
         self.parent.add_widget(self.background_widget)
-        self.parent.add_widget(self.dropdown_widget.mainbutton)
+        #self.parent.add_widget(self.dropdown_widget.mainbutton)
         
         return self.parent
 
 if __name__ == '__main__':
     
-    x=MyApplicationApp()
-    x.run()
+    MyApplicationApp().run()
     
 '''
 import sqlite3
