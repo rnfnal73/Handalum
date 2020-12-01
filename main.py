@@ -22,8 +22,36 @@ import sqlite3
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
-        self.parent = ""
+        self.parent = FloatLayout()
         self.widget_list = dict()
+        self.background_widget = Widget()  # color = (0.4,0.5,0.3))
+        self.dropdown_widget = DropDownWidget()
+        self.btn_callback_bind()
+
+        # 1. walking
+        self.walking_widget = WalkingWidget()
+        self.widget_list['walking'] = self.walking_widget
+
+        # 2. past_record
+        self.past_record_widget = PastRecordWidget()
+        self.widget_list['past_record'] = self.past_record_widget
+
+        # 3. gps_tracking
+        self.gps_tracking_widget = GpsTrackingWidget()
+        self.widget_list['gps_tracking'] = self.gps_tracking_widget
+
+        # 4. share_course
+        self.share_course_widget = ShareCourseWidget()
+        self.widget_list['share_course'] = self.share_course_widget
+
+        # 5. hot_place
+        self.hot_place_widget = HotPlaceWidget()
+        self.widget_list['hot_place'] = self.hot_place_widget
+
+        # 6. gps_records
+        self.gps_records_widget = GpsRecordsWidget()
+        self.widget_list['gps_records'] = self.gps_records_widget
+
         
     def btn_callback_bind(self):
         for (btn,func) in [('walking',self.walking_on_release),
@@ -68,34 +96,6 @@ class MyApplicationApp(MDApp):
         # 위젯들의 사이즈를 0으로 만들어 화면에서 사라지는 모습을 구현
     
     def build(self):
-        self.parent = FloatLayout()
-        self.background_widget = Widget()#color = (0.4,0.5,0.3))
-        self.dropdown_widget = DropDownWidget()
-        self.btn_callback_bind()
-        
-        # 1. walking
-        self.walking_widget = WalkingWidget()
-        self.widget_list['walking'] = self.walking_widget
-        
-        # 2. past_record
-        self.past_record_widget = PastRecordWidget()
-        self.widget_list['past_record'] = self.past_record_widget
-        
-        # 3. gps_tracking
-        self.gps_tracking_widget = GpsTrackingWidget()
-        self.widget_list['gps_tracking'] = self.gps_tracking_widget
-        
-        # 4. share_course
-        self.share_course_widget = ShareCourseWidget()
-        self.widget_list['share_course'] = self.share_course_widget
-        
-        # 5. hot_place
-        self.hot_place_widget = HotPlaceWidget()
-        self.widget_list['hot_place'] = self.hot_place_widget
-        
-        # 6. gps_records
-        self.gps_records_widget = GpsRecordsWidget()
-        self.widget_list['gps_records'] = self.gps_records_widget
         
         #aimg = AsyncImage(source='http://mywebsite.com/logo.png')
         
@@ -119,7 +119,7 @@ class MyApplicationApp(MDApp):
         self.clear_screen('walking')
 
         self.parent.add_widget(self.background_widget)
-        #self.parent.add_widget(self.dropdown_widget.mainbutton)
+        self.parent.add_widget(self.dropdown_widget.mainbutton)
         
         return self.parent
 
