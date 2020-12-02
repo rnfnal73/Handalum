@@ -42,7 +42,7 @@ class DropDownWidget(Widget):
                               'hot_place':self.hot_place_btn,'gps_records':self.gps_records_btn}
         
         # create a big main button
-        self.mainbutton = Button(text='change_screen', pos_hint = {'x':.85,'y':.85}, size_hint=(.15,.15))
+        self.mainbutton = Button(text='메뉴', pos_hint = {'x':.75,'y':.925}, size_hint=(.25,.075),font_name='Fonts/NanumBarunGothic.ttf')
         
         self.btn_callback_bind()
         

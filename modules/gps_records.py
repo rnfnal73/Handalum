@@ -15,6 +15,7 @@ from kivy.uix.behaviors import ButtonBehavior
 from kivy.garden.mapview import MapView, MapMarker, MarkerMapLayer
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.popup import Popup
+from kivy.effects.scroll import ScrollEffect
 from kivy.metrics import dp
 
 import sqlite3
@@ -205,53 +206,64 @@ class GpsRecordsWidget(Widget):
 
     def __init__(self):
         super().__init__()
-        self.origin_size = (1, 1)
-        self.widget_layout = PageLayout()
-        self.widget_layout.border = dp(0)
+        self.widget_layout_main = FloatLayout()
+        self.widget_layout = GridLayout(cols=2,spacing=10,size_hint_y=None,size=(Window.width,Window.height*3))
         self.pages = []
-        self.cur_page = 0
 
-        self.scrollview = ScrollView()
-
+        self.scrollview = ScrollView(size_hint=(1,None),size=(Window.width,Window.height),effect_cls=ScrollEffect)
+        for x in dir(self.scrollview):
+            print(x)
         self.items_bind()
 
     def create_img(self, *args):
         print(args)
         (filename, lat, lon, title,markers), count, obj = args
-        return ImageButton(filename, lat, lon, title, markers, count, obj
-                           , source='Records/' + filename + '.png',
-                           size=(Window.size[0] * 3 // 5, Window.size[1] * 3 // 5),
-                           allow_stretch=True, keep_ratio=False)
+        return ImageButton(filename, lat, lon, title, markers, count, obj,
+                           source='Records/' + filename + '.png',
+                           size_hint_y=None,
+                           size=(Window.size[0] * 3 // 5, Window.size[1] * 3 // 5))
+                           #height=Window.height//4)
+                           #allow_stretch=True, keep_ratio=False)
 
     def items_bind(self):
         self.widget_layout.clear_widgets()
+        self.scrollview.clear_widgets()
+        self.widget_layout_main.clear_widgets()
+
         sql_connection = sqlite3.connect('Records/records.db')
         cursor = sql_connection.cursor()
         cursor.execute('select datetime,lat,lon,title,markers from my_records')
         fetched = cursor.fetchall()
         (q, r), count = divmod(len(fetched), 4), 0
+        self.widget_layout = GridLayout(cols=2, spacing=10, size_hint_y=None, size=(Window.width, (Window.height * 3 // 5) * len(fetched)//2+1))
 
+        for i in range(len(fetched)):
+            self.widget_layout.add_widget(self.create_img(fetched[i], count, self))
+        self.scrollview.add_widget(self.widget_layout)
+        self.widget_layout_main.add_widget(self.scrollview)
+        '''
         for i in range(q):
             grid_layout = GridLayout(cols=2)
             for j in range(4):
-                grid_layout.add_widget(self.create_img(fetched[count], count, self))
+                self.widget_layout.add_widget(self.create_img(fetched[count], count, self))
+                #grid_layout.add_widget(self.create_img(fetched[count], count, self))
                 count += 1
-            self.widget_layout.add_widget(grid_layout)
+            #self.widget_layout.add_widget(grid_layout)
 
         grid_layout = GridLayout(cols=2)
         for _ in range(4):
             try:
-                grid_layout.add_widget(self.create_img(fetched[count], count, self))
+                self.widget_layout.add_widget(self.create_img(fetched[count], count, self))
+                #grid_layout.add_widget(self.create_img(fetched[count], count, self))
                 count += 1
             except:
-                grid_layout.add_widget(Widget())
+                pass
+                #grid_layout.add_widget(Widget())
 
-        self.widget_layout.add_widget(grid_layout)
+        #self.widget_layout.add_widget(grid_layout)
+        self.scrollview.add_widget(self.widget_layout)
+        '''
 
-
-        # self.widget_layout.add_widget(self.img3)
-        # self.widget_layout.add_widget(self.img2)
-        # self.widget_layout.add_widget(self.img)
         self.bind(is_screen=self.on_is_screen)
 
     def on_is_screen(self, instance, value):
@@ -259,6 +271,8 @@ class GpsRecordsWidget(Widget):
             self.items_bind()
         else:
             self.widget_layout.clear_widgets()
+            self.scrollview.clear_widgets()
+            self.widget_layout_main.clear_widgets()
 
     def set_screen(self, value):
         self.is_screen = value

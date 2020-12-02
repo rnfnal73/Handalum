@@ -22,7 +22,7 @@ class WalkingWidget(Widget):
         
         self.color = (0.0, 1.0, 0.0, 1.0)
         self.widget_layout_main = FloatLayout()
-        self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'y':0.05})
+        self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'x':0.5,'y':0.05})
         self.background_widget = Image(source='images/background2.png',size = Window.size,allow_stretch=True, keep_ratio=False)
         self.data_tables = MDDataTable(
             size_hint=(0.5, 0.8),
@@ -36,9 +36,6 @@ class WalkingWidget(Widget):
                 ('steps', self.steps_value),
                 ('dist', self.steps_value),
                 ('calories', self.steps_value),
-                ('a',self.steps_value),
-                ('b',self.steps_value),
-                ('c',self.steps_value)
             ]
         )
         self.items_bind()

@@ -21,7 +21,7 @@ class HotPlaceWidget(Widget):
         self.widget_layout = FloatLayout()
 
         #줌을 12에서 붐비는정도라는 의도에 걸맞게 zoom을 높여주기 -> ux 개선사항
-        self.map_view = MapView(zoom=15, lat=37.5606, lon=126.9790)  # gps에서 현재위치 받아서 띄우기
+        self.map_view = MapView(zoom=14, lat=37.5606, lon=126.9790)  # gps에서 현재위치 받아서 띄우기
 
         self.cur_lat, self.cur_lon = 37.5606, 126.9790
         self.marker_layer = MarkerMapLayer()
