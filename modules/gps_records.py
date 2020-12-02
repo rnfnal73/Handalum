@@ -77,7 +77,6 @@ class ImageButton(ButtonBehavior, AsyncImage):
             popuppp = Popup(title='good',content=box_good)
             popupppp = Popup(title='dup',content=box_dup)
             if not text_input.text:
-                print(text_input.text)
                 popupp.open()
             elif text_input.text==self.title:
                 popupppp.open()
@@ -241,28 +240,6 @@ class GpsRecordsWidget(Widget):
             self.widget_layout.add_widget(self.create_img(fetched[i], count, self))
         self.scrollview.add_widget(self.widget_layout)
         self.widget_layout_main.add_widget(self.scrollview)
-        '''
-        for i in range(q):
-            grid_layout = GridLayout(cols=2)
-            for j in range(4):
-                self.widget_layout.add_widget(self.create_img(fetched[count], count, self))
-                #grid_layout.add_widget(self.create_img(fetched[count], count, self))
-                count += 1
-            #self.widget_layout.add_widget(grid_layout)
-
-        grid_layout = GridLayout(cols=2)
-        for _ in range(4):
-            try:
-                self.widget_layout.add_widget(self.create_img(fetched[count], count, self))
-                #grid_layout.add_widget(self.create_img(fetched[count], count, self))
-                count += 1
-            except:
-                pass
-                #grid_layout.add_widget(Widget())
-
-        #self.widget_layout.add_widget(grid_layout)
-        self.scrollview.add_widget(self.widget_layout)
-        '''
 
         self.bind(is_screen=self.on_is_screen)
 

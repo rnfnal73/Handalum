@@ -100,7 +100,7 @@ class MyApplicationApp(MDApp):
         self.parent.add_widget(self.walking_widget.widget_layout_main)
         self.parent.add_widget(self.past_record_widget.widget_layout)
         self.parent.add_widget(self.gps_tracking_widget.widget_layout)
-        self.parent.add_widget(self.share_course_widget.widget_layout)
+        self.parent.add_widget(self.share_course_widget.widget_layout_main)
         self.parent.add_widget(self.hot_place_widget.widget_layout)
         #self.parent.add_widget(self.gps_records_widget.widget_layout)
         self.parent.add_widget(self.gps_records_widget.widget_layout_main)
