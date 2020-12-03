@@ -127,7 +127,8 @@ class GpsTrackingWidget(Widget):
         self.is_screen = value
 
     def on_walk(self,lat,lon):
+        print('333333333333333333333333')
         self.cur_lat, self.cur_lon = lat, lon
         self.positions.append((lat, lon))
-        self.map_view.add_marker(MapMarker(lat=lat, lon=lon,source='images/mmy_marker.png'),
+        self.map_view.add_marker(MapMarker(lat=lon, lon=lat,source='images/mmy_marker.png'),
                                  layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
