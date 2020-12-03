@@ -28,9 +28,6 @@ import os
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
-        request_permissions([Permission.ACCESS_COARSE_LOCATION,
-                             Permission.ACCESS_FINE_LOCATION])
-
         self.parent = FloatLayout()
         self.widget_list = dict()
         self.background_widget = Widget()  # color = (0.4,0.5,0.3))
@@ -129,6 +126,7 @@ class MyApplicationApp(MDApp):
         #                     Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
         gps.start()
+        print(1)
     def on_gps_location(self,**kwargs):
         print(kwargs['lat'],kwargs['lon'])
         print(kwargs)
