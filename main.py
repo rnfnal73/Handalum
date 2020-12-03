@@ -121,6 +121,7 @@ class MyApplicationApp(MDApp):
         return self.parent
 
     def on_start(self):
+        print('2222222222222222222222222')
         request_permissions([Permission.ACCESS_COARSE_LOCATION,
                              Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
