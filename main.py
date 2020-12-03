@@ -122,11 +122,11 @@ class MyApplicationApp(MDApp):
         return self.parent
 
     def on_start(self):
-        request_permissons([Permission.ACCESS_COARSE_LOCATION,
+        request_permissions([Permission.ACCESS_COARSE_LOCATION,
                              Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
         gps.start()
-        
+
     def on_gps_location(self,**kwargs):
         print(kwargs['lat'],kwargs['lon'])
         print(kwargs)
