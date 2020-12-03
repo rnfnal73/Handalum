@@ -125,12 +125,11 @@ class MyApplicationApp(MDApp):
                              Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
         gps.start()
-        print(gps.lat)
-        print(gps.lon)
+
 
     def on_gps_location(self,**kwargs):
-        self.walking_widget.walk()
-        self.gps_tracking_widget.walk(kwargs['lat'],kwargs['lon'])
+        self.walking_widget.on_walk()
+        self.gps_tracking_widget.on_walk(kwargs['lat'],kwargs['lon'])
 
     def on_stop(self):
         gps.stop()

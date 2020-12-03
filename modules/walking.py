@@ -57,8 +57,8 @@ class WalkingWidget(Widget):
                 ('dist', self.steps_value),
                 ('calories', self.steps_value),
             ]
-    def walk(self):
-        self.steps_value += 1
+    def on_walk(self):
+        self.steps_value = self.steps_value + 1
 
     def on_is_screen(self,instance,value):
         if value:
@@ -69,4 +69,4 @@ class WalkingWidget(Widget):
             
     def set_screen(self,value):
         self.is_screen = value
-        self.steps_value = time.time()
+        #self.steps_value = time.time()

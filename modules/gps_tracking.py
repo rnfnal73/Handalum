@@ -111,7 +111,7 @@ class GpsTrackingWidget(Widget):
 
 
     def items_bind(self):
-        self.map_view.bind(on_map_relocated=self.pos_changed)
+        #self.map_view.bind(on_map_relocated=self.pos_changed)
         self.save_button.bind(on_release=self.save_button_release)
         self.clear_button.bind(on_release=self.clear_button_release)
         self.widget_layout.add_widget(self.map_view)
@@ -127,3 +127,9 @@ class GpsTrackingWidget(Widget):
             
     def set_screen(self,value):
         self.is_screen = value
+
+    def on_walk(self,lat,lon):
+        self.cur_lat, self.cur_lon = lat, lon
+        self.positions.append((lon, lat))
+        self.map_view.add_marker(MapMarker(lat=lon, lon=lat,source='images/mmy_marker.png'),
+                                 layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
