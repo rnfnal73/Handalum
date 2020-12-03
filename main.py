@@ -111,7 +111,6 @@ class MyApplicationApp(MDApp):
         self.parent.add_widget(self.gps_tracking_widget.widget_layout)
         self.parent.add_widget(self.share_course_widget.widget_layout_main)
         self.parent.add_widget(self.hot_place_widget.widget_layout)
-        # self.parent.add_widget(self.gps_records_widget.widget_layout)
         self.parent.add_widget(self.gps_records_widget.widget_layout_main)
 
         self.clear_screen('walking')
@@ -126,10 +125,15 @@ class MyApplicationApp(MDApp):
                              Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
         gps.start()
+        print(gps.lat)
+        print(gps.lon)
 
     def on_gps_location(self,**kwargs):
-        print(kwargs['lat'],kwargs['lon'])
-        print(kwargs)
+        self.walking_widget.walk()
+        self.gps_tracking_widget.walk(kwargs['lat'],kwargs['lon'])
+
+    def on_stop(self):
+        gps.stop()
 
 if __name__ == '__main__':
     MyApplicationApp().run()

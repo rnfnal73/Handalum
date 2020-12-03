@@ -52,10 +52,13 @@ class WalkingWidget(Widget):
         self.bind(steps_value=self.steps_value_changed)
         
     def steps_value_changed(self,instance,value):
-        #for label in [self.steps_value_label,self.distance_value_label,self.kcal_value_label,
-        #              self.a_value_label,self.b_value_label,self.c_value_label]:
-        #    label.text = str(time.time())
-        pass
+        self.data_tables.row_data = [
+                ('steps', self.steps_value),
+                ('dist', self.steps_value),
+                ('calories', self.steps_value),
+            ]
+    def walk(self):
+        self.steps_value += 1
 
     def on_is_screen(self,instance,value):
         if value:
