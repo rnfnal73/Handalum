@@ -20,7 +20,7 @@ import os
 #fontname = '/'.join([os.getenv('SystemRoot'),'/Fonts/NanumGothic.ttf'])
 
 
-'''
+"""
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
@@ -116,7 +116,7 @@ class MyApplicationApp(MDApp):
 if __name__ == '__main__':
     
     MyApplicationApp().run()
-'''
+"""
 from kivy.lang import Builder
 from plyer import gps
 from kivy.app import App
@@ -200,10 +200,12 @@ class GpsTest(App):
     def on_location(self, **kwargs):
         self.gps_location = '\n'.join([
             '{}={}'.format(k, v) for k, v in kwargs.items()])
+        print(self.gps_location)
 
     @mainthread
     def on_status(self, stype, status):
         self.gps_status = 'type={}\n{}'.format(stype, status)
+        print(self.gps_status)
 
     def on_pause(self):
         gps.stop()
