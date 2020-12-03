@@ -46,17 +46,19 @@ class WalkingWidget(Widget):
         #    self.widget_layout.add_widget(_label)
 
         self.widget_layout_main.add_widget(self.background_widget)
-        #self.widget_layout.add_widget(self.data_tables)
         self.widget_layout_main.add_widget(self.data_tables)
         self.bind(is_screen=self.on_is_screen)
         self.bind(steps_value=self.steps_value_changed)
         
     def steps_value_changed(self,instance,value):
+        self.widget_layout_main.clear_widgets()
         self.data_tables.row_data = [
-                ('steps', self.steps_value),
-                ('dist', self.steps_value),
-                ('calories', self.steps_value),
+                ('steps', value),
+                ('dist', value),
+                ('calories', value),
             ]
+        self.widget_layout_main.add_widget(self.background_widget)
+        self.widget_layout_main.add_widget(self.data_tables)
     def on_walk(self):
         self.steps_value = self.steps_value + 1
 

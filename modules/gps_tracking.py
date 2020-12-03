@@ -27,8 +27,6 @@ class GpsTrackingWidget(Widget):
         self.cur_lat,self.cur_lon = 37.5606,126.9790
         self.marker_layer = MarkerMapLayer()
         self.map_view.add_layer(self.marker_layer)
-        self.map_view.add_marker(MapMarker(lat=self.cur_lat,lon=self.cur_lon,
-                                           source='images/mmy_marker.png'),layer=self.marker_layer)
         self.positions = [(self.cur_lat,self.cur_lon)]
         self.save_button = Button(text='save',pos_hint={'x':0.0,'y':0.0},size_hint=(.1,.1))
         self.clear_button = Button(text='clear',pos_hint={'x':0.1,'y':0.0},size_hint=(.1,.1))
@@ -130,6 +128,6 @@ class GpsTrackingWidget(Widget):
 
     def on_walk(self,lat,lon):
         self.cur_lat, self.cur_lon = lat, lon
-        self.positions.append((lon, lat))
+        self.positions.append((lat, lon))
         self.map_view.add_marker(MapMarker(lat=lon, lon=lat,source='images/mmy_marker.png'),
                                  layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
