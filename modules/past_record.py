@@ -23,7 +23,7 @@ class PastRecordWidget(Widget):
         super().__init__()
         
         self.widget_layout = BoxLayout(orientation='vertical')
-        self.calendar = MDDatePicker(callback=self.get_date,size_hint=(1,1))
+        self.calendar = MDDatePicker(callback=self.get_date,size=(Window.width,Window.height))
 
 
         self.items_bind()

@@ -210,12 +210,10 @@ class GpsRecordsWidget(Widget):
         self.pages = []
 
         self.scrollview = ScrollView(size_hint=(1,None),size=(Window.width,Window.height),effect_cls=ScrollEffect)
-        for x in dir(self.scrollview):
-            print(x)
         self.items_bind()
 
     def create_img(self, *args):
-        print(args)
+        #print(args)
         (filename, lat, lon, title,markers), count, obj = args
         return ImageButton(filename, lat, lon, title, markers, count, obj,
                            source='Records/' + filename + '.png',

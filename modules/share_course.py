@@ -143,7 +143,7 @@ class ShareCourseWidget(Widget):
         self.widget_layout_main.clear_widgets()
         sql_connection = sqlite3.connect('Records/records.db')
         cursor = sql_connection.cursor()
-        cursor.execute('select datetime,lat,lon,title,markers,recommend from shared_records')
+        cursor.execute('select * from shared_records')
         fetched = cursor.fetchall()
         (q, r), count = divmod(len(fetched), 4), 0
         self.widget_layout = GridLayout(cols=2, spacing=10, size_hint_y=None,
@@ -153,6 +153,7 @@ class ShareCourseWidget(Widget):
             fetched.sort(key=lambda x : x[5])
         elif value == 'date':
             fetched.sort(key=lambda x : x[0])
+
 
         for i in range(len(fetched)):
             self.widget_layout.add_widget(self.create_img(fetched[i], count, self))
