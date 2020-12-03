@@ -128,6 +128,7 @@ class MyApplicationApp(MDApp):
 
 
     def on_gps_location(self,**kwargs):
+        print('111111111111111111111111111111111111')
         self.walking_widget.on_walk()
         self.gps_tracking_widget.on_walk(kwargs['lat'],kwargs['lon'])
 
