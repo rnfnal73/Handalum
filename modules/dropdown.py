@@ -30,12 +30,12 @@ class DropDownWidget(Widget):
         super().__init__()
         self.dropdown = DropDown() # dropdown menu
         
-        self.walking_btn = Button(text = '만보기',size_hint_y = None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
-        self.past_record_btn = Button(text = '만보기 기록',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
-        self.gps_tracking_btn = Button(text = 'GPS',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
-        self.share_course_btn = Button(text = '기록 공유',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
-        self.hot_place_btn = Button(text = '핫플',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
-        self.gps_records_btn = Button(text = 'GPS 기록',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.walking_btn = Button(text = '만보기',size_hint_y = None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
+        self.past_record_btn = Button(text = '만보기 기록',size_hint_y=None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
+        self.gps_tracking_btn = Button(text = 'GPS',size_hint_y=None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
+        self.share_course_btn = Button(text = '기록 공유',size_hint_y=None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
+        self.hot_place_btn = Button(text = '핫플',size_hint_y=None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
+        self.gps_records_btn = Button(text = 'GPS 기록',size_hint_y=None, height = 60,font_name='Fonts/NanumBarunGothic.ttf')
         
         self.dropdown_dict = {'walking':self.walking_btn,'past_record':self.past_record_btn,
                               'gps_tracking':self.gps_tracking_btn,'share_course':self.share_course_btn,
