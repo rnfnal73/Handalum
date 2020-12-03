@@ -22,13 +22,14 @@ class WalkingWidget(Widget):
         
         self.color = (0.0, 1.0, 0.0, 1.0)
         self.widget_layout_main = FloatLayout()
-        self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'x':0.5,'y':0.05})
+        #self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'x':0.1,'y':0.05})
         self.background_widget = Image(source='images/background2.png',size = Window.size,allow_stretch=True, keep_ratio=False)
         self.data_tables = MDDataTable(
-            size_hint=(0.5, 0.8),
+            pos_hint={'x':.1,'y':.1},
+            size_hint=(0.8, 0.8),
             column_data=[
-                ("", dp(40)),
-                ("", dp(70)),
+                ("", dp(20)),
+                ("", dp(30)),
                 # ("Team Lead", dp(30))
             ]
             ,
@@ -45,8 +46,8 @@ class WalkingWidget(Widget):
         #    self.widget_layout.add_widget(_label)
 
         self.widget_layout_main.add_widget(self.background_widget)
-        self.widget_layout.add_widget(self.data_tables)
-        self.widget_layout_main.add_widget(self.widget_layout)
+        #self.widget_layout.add_widget(self.data_tables)
+        self.widget_layout_main.add_widget(self.data_tables)
         self.bind(is_screen=self.on_is_screen)
         self.bind(steps_value=self.steps_value_changed)
         
@@ -61,7 +62,7 @@ class WalkingWidget(Widget):
             self.items_bind()
         else:
             self.widget_layout_main.clear_widgets()
-            self.widget_layout.clear_widgets()
+            #self.widget_layout.clear_widgets()
             
     def set_screen(self,value):
         self.is_screen = value

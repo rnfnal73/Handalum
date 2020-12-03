@@ -160,6 +160,3 @@ class ShareCourseWidget(Widget):
         self.widget_layout_main.add_widget(self.scrollview)
         self.widget_layout_main.add_widget(self.button_box)
         sql_connection.close()
-
-
-

@@ -30,12 +30,12 @@ class DropDownWidget(Widget):
         super().__init__()
         self.dropdown = DropDown() # dropdown menu
         
-        self.walking_btn = Button(text = 'walking',size_hint_y = None, height = 22)
-        self.past_record_btn = Button(text = 'past_record',size_hint_y=None, height = 22)
-        self.gps_tracking_btn = Button(text = 'gps_tracking',size_hint_y=None, height = 22)
-        self.share_course_btn = Button(text = 'share_course',size_hint_y=None, height = 22)
-        self.hot_place_btn = Button(text = 'hot_place',size_hint_y=None, height = 22)
-        self.gps_records_btn = Button(text = 'gps_records',size_hint_y=None, height = 22)
+        self.walking_btn = Button(text = '만보기',size_hint_y = None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.past_record_btn = Button(text = '만보기 기록',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.gps_tracking_btn = Button(text = 'GPS',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.share_course_btn = Button(text = '기록 공유',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.hot_place_btn = Button(text = '핫플',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
+        self.gps_records_btn = Button(text = 'GPS 기록',size_hint_y=None, height = 40,font_name='Fonts/NanumBarunGothic.ttf')
         
         self.dropdown_dict = {'walking':self.walking_btn,'past_record':self.past_record_btn,
                               'gps_tracking':self.gps_tracking_btn,'share_course':self.share_course_btn,
@@ -47,8 +47,8 @@ class DropDownWidget(Widget):
         self.btn_callback_bind()
         
     def btn_callback_bind(self):
-        for btn in ['walking','past_record','gps_tracking',
-                    'share_course','hot_place','gps_records']:
+        for btn in ['walking','gps_tracking','past_record',
+                    'gps_records','share_course','hot_place']:
             self.dropdown.add_widget(self.dropdown_dict[btn])
             
         # show the dropdown menu when the main button is released
