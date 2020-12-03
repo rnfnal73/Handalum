@@ -20,7 +20,7 @@ import os
 #fontname = '/'.join([os.getenv('SystemRoot'),'/Fonts/NanumGothic.ttf'])
 
 
-"""
+'''
 class MyApplicationApp(MDApp):
     def __init__(self):
         super().__init__()
@@ -116,7 +116,7 @@ class MyApplicationApp(MDApp):
 if __name__ == '__main__':
     
     MyApplicationApp().run()
-"""
+'''
 from kivy.lang import Builder
 from plyer import gps
 from kivy.app import App
