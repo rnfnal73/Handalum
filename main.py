@@ -18,7 +18,7 @@ from modules.hot_place import HotPlaceWidget
 from modules.gps_records import GpsRecordsWidget
 
 from plyer import gps
-#from android.permissions import request_permissions, Permission
+from android.permissions import request_permissions, Permission
 
 import os
 
@@ -122,11 +122,11 @@ class MyApplicationApp(MDApp):
         return self.parent
 
     def on_start(self):
-        #request_permissons([Permission.ACCESS_COARSE_LOCATION,
-        #                     Permission.ACCESS_FINE_LOCATION])
-        #gps.configure(on_location=self.on_gps_location)
-        #gps.start()
-        print(1)
+        request_permissons([Permission.ACCESS_COARSE_LOCATION,
+                             Permission.ACCESS_FINE_LOCATION])
+        gps.configure(on_location=self.on_gps_location)
+        gps.start()
+        
     def on_gps_location(self,**kwargs):
         print(kwargs['lat'],kwargs['lon'])
         print(kwargs)
