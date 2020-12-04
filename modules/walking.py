@@ -19,7 +19,6 @@ class WalkingWidget(Widget):
     steps_value = NumericProperty(0)
     def __init__(self):
         super().__init__()
-        
         self.color = (0.0, 1.0, 0.0, 1.0)
         self.widget_layout_main = FloatLayout()
         #self.widget_layout = GridLayout(cols = 2, size_hint = (0.8,0.8), pos_hint = {'x':0.1,'y':0.05})
@@ -42,8 +41,23 @@ class WalkingWidget(Widget):
         self.items_bind()
         
     def items_bind(self):
-        #for _label in self.labels:
-        #    self.widget_layout.add_widget(_label)
+        self.widget_layout_main.clear_widgets()
+
+        self.data_tables = MDDataTable(
+            pos_hint={'x': .1, 'y': .1},
+            size_hint=(0.8, 0.8),
+            column_data=[
+                ("", dp(20)),
+                ("", dp(30)),
+                # ("Team Lead", dp(30))
+            ]
+            ,
+            row_data=[
+                ('steps', self.steps_value),
+                ('dist', self.steps_value),
+                ('calories', self.steps_value),
+            ]
+        )
 
         self.widget_layout_main.add_widget(self.background_widget)
         self.widget_layout_main.add_widget(self.data_tables)
@@ -52,14 +66,19 @@ class WalkingWidget(Widget):
         
     def steps_value_changed(self,instance,value):
         print('here executed')
+
+        '''
+        self.data_tables.row_data[0] = ('steps',self.steps_value)
+        self.data_tables.row_data[1] = ('dist', self.steps_value)
+        self.data_tables.row_data[2] = ('calories', self.steps_value)
+
+        print(self.data_tables.row_data)
+
         self.widget_layout_main.clear_widgets()
-        self.data_tables.row_data = [
-                ('steps', value+1),
-                ('dist', value+1),
-                ('calories', value+1),
-            ]
+
         self.widget_layout_main.add_widget(self.background_widget)
         self.widget_layout_main.add_widget(self.data_tables)
+        '''
 
     def on_walk(self):
         print('44444444444444444444444')

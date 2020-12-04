@@ -20,8 +20,9 @@ class GpsTrackingWidget(Widget):
     is_screen = BooleanProperty(True)
     cur_loc = ListProperty([0,0])
 
-    def __init__(self):
+    def __init__(self,walking_widget):
         super().__init__()
+        self.walking_widget = walking_widget
         self.widget_layout = FloatLayout()
         self.origin_size = (1,1)
         self.map_view = MapView(zoom=12, lat=37.5606, lon=126.9790) # gps에서 현재위치 받아서 띄우기
@@ -35,6 +36,7 @@ class GpsTrackingWidget(Widget):
         self.items_bind()
     
     def pos_changed(self,instance,coord,gps):
+        self.walking_widget.on_walk()
         self.positions.append((gps.lon,gps.lat))
         self.map_view.add_marker(MapMarker(lat=gps.lon,lon=gps.lat,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음

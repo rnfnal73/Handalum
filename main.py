@@ -17,8 +17,8 @@ from modules.share_course import ShareCourseWidget
 from modules.hot_place import HotPlaceWidget
 from modules.gps_records import GpsRecordsWidget
 
-from plyer import gps
-from android.permissions import request_permissions, Permission
+#from plyer import gps
+#from android.permissions import request_permissions, Permission
 
 import os
 
@@ -43,7 +43,7 @@ class MyApplicationApp(MDApp):
         self.widget_list['past_record'] = self.past_record_widget
 
         # 3. gps_tracking
-        self.gps_tracking_widget = GpsTrackingWidget()
+        self.gps_tracking_widget = GpsTrackingWidget(self.walking_widget)
         self.widget_list['gps_tracking'] = self.gps_tracking_widget
 
         # 4. share_course
@@ -57,6 +57,7 @@ class MyApplicationApp(MDApp):
         # 6. gps_records
         self.gps_records_widget = GpsRecordsWidget()
         self.widget_list['gps_records'] = self.gps_records_widget
+
 
     def btn_callback_bind(self):
         for (btn, func) in [('walking', self.walking_on_release),
