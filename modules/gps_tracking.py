@@ -34,11 +34,11 @@ class GpsTrackingWidget(Widget):
         
         self.items_bind()
     
-    def pos_changed(self,instance,coord):
+    def pos_changed(self,instance,coord,gps):
         print('execute')
         lat,lon = coord[0],coord[1]
-        self.positions.append((lat,lon))
-        self.map_view.add_marker(MapMarker(lat=lat,lon=lon,
+        self.positions.append((gps.lon,gps.lat))
+        self.map_view.add_marker(MapMarker(lat=gps.lon,lon=gps.lat,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음
 
     def clear_button_release(self,btn):
@@ -104,14 +104,14 @@ class GpsTrackingWidget(Widget):
 
 
     def items_bind(self):
-        #self.map_view.bind(on_map_relocated=self.pos_changed)
+        self.map_view.bind(on_map_relocated=self.pos_changed)
         self.save_button.bind(on_release=self.save_button_release)
         self.clear_button.bind(on_release=self.clear_button_release)
         self.widget_layout.add_widget(self.map_view)
         self.widget_layout.add_widget(self.save_button)
         self.widget_layout.add_widget(self.clear_button)                             
         self.bind(is_screen=self.on_is_screen)
-        self.bind(cur_loc=self.pos_changed)
+        #self.bind(cur_loc=self.pos_changed)
         
     def on_is_screen(self,instance,value):
         if value:
