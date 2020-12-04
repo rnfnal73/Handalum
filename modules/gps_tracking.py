@@ -35,8 +35,6 @@ class GpsTrackingWidget(Widget):
         self.items_bind()
     
     def pos_changed(self,instance,coord,gps):
-        print('execute')
-        lat,lon = coord[0],coord[1]
         self.positions.append((gps.lon,gps.lat))
         self.map_view.add_marker(MapMarker(lat=gps.lon,lon=gps.lat,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음
@@ -122,7 +120,7 @@ class GpsTrackingWidget(Widget):
     def set_screen(self,value):
         self.is_screen = value
 
-    def on_walk(self,lat,lon):
+    """    def on_walk(self,lat,lon):
         print('333333333333333333333333333333')
         self.cur_loc = [lat,lon]
         '''
@@ -131,3 +129,4 @@ class GpsTrackingWidget(Widget):
         self.map_view.add_marker(MapMarker(lat=lat, lon=lon,source='images/mmy_marker.png'),
                                  layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
         '''
+    """

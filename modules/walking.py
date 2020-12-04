@@ -60,6 +60,7 @@ class WalkingWidget(Widget):
             ]
         self.widget_layout_main.add_widget(self.background_widget)
         self.widget_layout_main.add_widget(self.data_tables)
+
     def on_walk(self):
         print('44444444444444444444444')
         self.steps_value = self.steps_value + 1
