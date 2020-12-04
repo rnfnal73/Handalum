@@ -125,7 +125,7 @@ class MyApplicationApp(MDApp):
         request_permissions([Permission.ACCESS_COARSE_LOCATION,
                              Permission.ACCESS_FINE_LOCATION])
         gps.configure(on_location=self.on_gps_location)
-        gps.start()
+        gps.start(1000,0)
 
 
     def on_gps_location(self,**kwargs):
