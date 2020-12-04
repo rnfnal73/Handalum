@@ -120,7 +120,7 @@ class MyApplicationApp(MDApp):
 
         return self.parent
 
-    def on_start(self):
+    '''    def on_start(self):
         print('2222222222222222222222222')
         request_permissions([Permission.ACCESS_COARSE_LOCATION,
                              Permission.ACCESS_FINE_LOCATION])
@@ -135,6 +135,7 @@ class MyApplicationApp(MDApp):
 
     def on_stop(self):
         gps.stop()
+    '''
 
 if __name__ == '__main__':
     MyApplicationApp().run()
