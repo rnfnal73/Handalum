@@ -6,7 +6,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
-from kivy.properties import BooleanProperty,NumericProperty
+from kivy.properties import BooleanProperty,NumericProperty,ListProperty
 from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 from kivy.core.window import WindowBase
@@ -18,7 +18,8 @@ import sqlite3
 
 class GpsTrackingWidget(Widget):
     is_screen = BooleanProperty(True)
-    
+    cur_loc = ListProperty([0,0])
+
     def __init__(self):
         super().__init__()
         self.widget_layout = FloatLayout()
@@ -33,10 +34,10 @@ class GpsTrackingWidget(Widget):
         
         self.items_bind()
     
-    def pos_changed(self,instance,coord,gps):
-        self.cur_lat,self.cur_lon = gps.lat,gps.lon
-        self.positions.append((gps.lon,gps.lat))
-        self.map_view.add_marker(MapMarker(lat=gps.lon,lon=gps.lat,
+    def pos_changed(self,instance,value):
+        self.cur_lat,self.cur_lon = value[0],value[1]
+        self.positions.append((value[1],value[0]))
+        self.map_view.add_marker(MapMarker(lat=value[1],lon=value[0],
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음
 
     def clear_button_release(self,btn):
@@ -109,6 +110,7 @@ class GpsTrackingWidget(Widget):
         self.widget_layout.add_widget(self.save_button)
         self.widget_layout.add_widget(self.clear_button)                             
         self.bind(is_screen=self.on_is_screen)
+        self.bind(cur_loc=self.pos_changed)
         
     def on_is_screen(self,instance,value):
         if value:
@@ -121,7 +123,10 @@ class GpsTrackingWidget(Widget):
 
     def on_walk(self,lat,lon):
         print('333333333333333333333333333333')
+        self.cur_loc = [lat,lon]
+        '''
         self.cur_lat, self.cur_lon = lat, lon
         self.positions.append((lat, lon))
         self.map_view.add_marker(MapMarker(lat=lat, lon=lon,source='images/mmy_marker.png'),
                                  layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
+        '''
