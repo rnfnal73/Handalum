@@ -34,10 +34,11 @@ class GpsTrackingWidget(Widget):
         
         self.items_bind()
     
-    def pos_changed(self,instance,value):
-        self.cur_lat,self.cur_lon = value[0],value[1]
-        self.positions.append((value[1],value[0]))
-        self.map_view.add_marker(MapMarker(lat=value[1],lon=value[0],
+    def pos_changed(self,instance,coord):
+        print('execute')
+        lat,lon = coord[0],coord[1]
+        self.positions.append((lat,lon))
+        self.map_view.add_marker(MapMarker(lat=lat,lon=lon,
                                            source='images/mmy_marker.png'),layer=self.marker_layer)#오류로 gps.lat과 gps.lon의 값이 바뀌어있음
 
     def clear_button_release(self,btn):

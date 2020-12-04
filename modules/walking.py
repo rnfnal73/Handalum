@@ -51,11 +51,12 @@ class WalkingWidget(Widget):
         self.bind(steps_value=self.steps_value_changed)
         
     def steps_value_changed(self,instance,value):
+        print('here executed')
         self.widget_layout_main.clear_widgets()
         self.data_tables.row_data = [
-                ('steps', value),
-                ('dist', value),
-                ('calories', value),
+                ('steps', value+1),
+                ('dist', value+1),
+                ('calories', value+1),
             ]
         self.widget_layout_main.add_widget(self.background_widget)
         self.widget_layout_main.add_widget(self.data_tables)
