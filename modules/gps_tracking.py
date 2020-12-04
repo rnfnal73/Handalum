@@ -100,13 +100,6 @@ class GpsTrackingWidget(Widget):
         popup.open()
 
 
-        #print("insert into my_records (datetime,lat,lon,year,month,day,hr,min,sec) values ("+f"{cur},{_list[0]},{_list[1]},{cur_time.year},{cur_time.month},{cur_time.day},{cur_time.hour},{cur_time.minute},{cur_time.second}"+")")
-
-        # with open('Records/'+ cur, 'wb') as fd:
-        #    pickle.dump(_list, fd)
-        #WindowBase.screenshot(WindowBase,name='img.png')
-        #self.screenshot(name='Records/img.png')
-
 
     def items_bind(self):
         #self.map_view.bind(on_map_relocated=self.pos_changed)
@@ -127,8 +120,8 @@ class GpsTrackingWidget(Widget):
         self.is_screen = value
 
     def on_walk(self,lat,lon):
-        print('333333333333333333333333')
+        print('333333333333333333333333333333')
         self.cur_lat, self.cur_lon = lat, lon
         self.positions.append((lat, lon))
-        self.map_view.add_marker(MapMarker(lat=lon, lon=lat,source='images/mmy_marker.png'),
+        self.map_view.add_marker(MapMarker(lat=lat, lon=lon,source='images/mmy_marker.png'),
                                  layer=self.marker_layer)  # 오류로 gps.lat과 gps.lon의 값이 바뀌어있음
